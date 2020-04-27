@@ -10,6 +10,7 @@ using Convey.MessageBrokers.CQRS;
 using Convey.MessageBrokers.RabbitMQ;
 using Convey.Metrics.AppMetrics;
 using Convey.Persistence.Redis;
+using Convey.QoS.Violation;
 using Convey.WebApi;
 using Convey.WebApi.Swagger;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,7 @@ namespace Pacco.Services.OrderMaker
                 .AddRedis()
                 .AddMetrics()
                 .AddRabbitMq()
+                .AddQoSTrackingDecorators()
                 .AddWebApiSwaggerDocs();
 
             builder.Services.AddChronicle();
