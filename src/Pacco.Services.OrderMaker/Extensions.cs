@@ -53,6 +53,7 @@ namespace Pacco.Services.OrderMaker
             app.UseErrorHandler()
                 .UseSwaggerDocs()
                 .UseConvey()
+                .UseQoSCache()
                 .UseMetrics()
                 .UseRabbitMq()
                 .SubscribeEvent<OrderApproved>()
