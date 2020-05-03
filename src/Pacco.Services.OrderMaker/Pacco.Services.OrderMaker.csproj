@@ -21,7 +21,7 @@
     <PackageReference Include="Convey.MessageBrokers.RabbitMQ" Version="0.4.*" />
     <PackageReference Include="Convey.Metrics.AppMetrics" Version="0.4.*" />
     <PackageReference Include="Convey.Persistence.Redis" Version="0.4.*" />
-    <PackageReference Include="Convey.QoS.Violation" Version="0.0.5" />
+    <PackageReference Include="Convey.QoS.Violation" Version="0.0.6" />
     <PackageReference Include="Convey.WebApi" Version="0.4.*" />
     <PackageReference Include="Convey.WebApi.CQRS" Version="0.4.*" />
     <PackageReference Include="Convey.WebApi.Swagger" Version="0.4.*" />

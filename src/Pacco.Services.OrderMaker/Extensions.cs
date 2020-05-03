@@ -37,7 +37,7 @@ namespace Pacco.Services.OrderMaker
                 .AddRedis()
                 .AddMetrics()
                 .AddRabbitMq()
-                .AddQoSTrackingDecorators()
+                .AddQoSViolation()
                 .AddWebApiSwaggerDocs();
 
             builder.Services.AddChronicle();
@@ -53,7 +53,7 @@ namespace Pacco.Services.OrderMaker
             app.UseErrorHandler()
                 .UseSwaggerDocs()
                 .UseConvey()
-                .UseQoSCache()
+                .UseQoS()
                 .UseMetrics()
                 .UseRabbitMq()
                 .SubscribeEvent<OrderApproved>()
