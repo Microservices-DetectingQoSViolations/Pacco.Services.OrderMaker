@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Convey;
 using Convey.Logging;
+using Convey.QoS.Violation.Runtime;
 using Convey.WebApi;
 using Convey.WebApi.CQRS;
 using Microsoft.AspNetCore;
@@ -23,7 +24,8 @@ namespace Pacco.Services.OrderMaker
                     .UseApp()
                     .UseDispatcherEndpoints(endpoints => endpoints
                         .Get("", ctx => ctx.Response.WriteAsync("Welcome to Pacco uber AI order maker Service!"))
-                        .Post<MakeOrder>("orders")))
+                        .Post<MakeOrder>("orders"))
+                    .UseRuntimeMetrics())
                 .UseLogging()
                 .Build()
                 .RunAsync();
